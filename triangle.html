@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="shortcut icon" href="base.png">
+    <link rel="stylesheet" type="text/css" href="cursorchik.css">
+    <link rel="stylesheet" type="text/css" href="sidebarMenu.css">
+</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>triangle</title>
+</head>
+<body>
+    
+    <div id="cursor"></div>
+    <script>
+        let cursor = document.querySelector('#cursor');
+        let body = document.querySelector('body');
+        document.addEventListener('mousemove', (e) => {
+            
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+
+        })
+    </script>
+
+
+
+
+<script>
+    function cornero(x) {
+    return (180 - x * 2);
+}
+function cornert(x) {
+    return Math.floor((180 - x) / 2);
+}
+function pr_triangle(x) {
+    return (90 - x);
+}
+function rb_side(x, y) {
+    return x - 2 * y;
+}
+function rb_bok(x, y) {
+    return Math.floor((x - y) / 2);
+}
+function katet_30(x) {
+    return x / 2;
+}
+function teorema_pifagora(x, y) {
+    return Math.sqrt(x ** 2 - y ** 2);
+}
+function giponinuza_30_katet(x) {
+    return x * 2;
+}
+function katet_2(x, y, c) {
+    return x - (y + c);
+}
+function square_gipotinuza(x, y) {
+    return Math.sqrt(x ** 2 + y ** 2);
+}
+
+var task = parseInt(prompt("Выберете тему из списка: 1 - найти угол, 2 - найти сторону, 3 - равность треугольников: "));
+if (task == 1) {
+    var triangle = parseInt(prompt("Какой треугольник 1 - равнобедренный, 2 - прямоугольный, 3 - равносторонний: "));
+    if (triangle == 1) {
+        var what_r = parseInt(prompt("Какой угол 1 - верхний угол , 2 - угол при основании: "));
+        if (what_r == 1) {
+            var corner_ostr = parseInt(prompt("Введите угол при основании  "));
+            if (cornero(corner_ostr) == 90) {
+                var side_4 = parseInt(prompt("Верхний угол равен 90 градусов, следовательно треугольник прямоугольный и равнобедренный. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else if (cornero(corner_ostr) > 90) {
+                var side_4 = parseInt(prompt(cornero(corner_ostr) + " градусов - тупой верхний  угол т.к. острые углы при основание равны, следовательно 180 градусов минус 2 острых угла будет равно тупому углу. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else {
+                var side_4 = parseInt(prompt(cornero(corner_ostr) + " градусов - острый верхний угол т.к. острые углы при основание равны, следовательно 180 градусов минус 2 острых угла будет равно острому углу. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }}
+        } else if (what_r == 2) {
+            var corner_stupid = parseInt(prompt("Введите верхний  угол "));
+            if (cornert(corner_stupid) == 90) {
+                var side_4 = parseInt(prompt("Ошибка! Верхний угол не может быть равен 0 градусов. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else if (cornert(corner_stupid) < 90) {
+                var side_4 = parseInt(prompt(cornert(corner_stupid) + " градусов - один острый угол при основании т.к. 180 градусов минус верхний угол даст нам сумму двух угол при основании. И мы поделим её на 2. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        }
+    }
+    if (triangle == 2) {
+        var what_triangle = parseInt(prompt("Треугольник прямоугольный равнобедренный? Если да впишите 1, если нет впишите 0."));
+        if (what_triangle == 1) {
+            var side_4 = parseInt(prompt("Углы при основание всегла равны 45 градусов. Введите 1 что бы начать сначала."));
+            if (side_3 == 1) {
+                console.log(".");
+            } else if (side_3 == 0) {
+                console.log(".");
+            } else {
+                console.log(".");
+            }
+        } else if (what_triangle == 0) {
+            var corner_30pr = parseInt(prompt("Равен ли ваш катет половине гипотинузы? Если да впишите 1, если нет впишите 0"));
+            if (corner_30pr == 1) {
+                var side_4 = parseInt(prompt("Угол лежащий напротив этого катета будет равен 30 градусов, а угол лежащий напротив гипотинузв будет равен 60 градусов, т.к. по свойству прямоугольных треугольников угол лежащий напротив катетв равному половине гипотинузы будет равен 30 градусов. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else {
+                var what_corner = parseInt(prompt("Впишите известный острый угол "));
+                var side_4 = parseInt(prompt(pr_triangle(what_corner) + " градусов - неизвестный острый угол т.к. 90 градусов минус " + what_corner + " градусов будет равнятся искомому углу. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        } else {
+            var side_4 = parseInt(prompt("Ошибка! Введите 1 или 0 !"));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+        }
+    }
+    if (triangle == 3) {
+        var side_4 = parseInt(prompt(" Эти углы будут равны 60 градусов по свойству равносторонних треугольников."));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+    }
+}
+if (task == 2) {
+    var triangle = parseInt(prompt("Какой треугольник 1 - равнобедренный, 2 - прямоугольный, 3 - равносторонний: "));
+    if (triangle == 1) {
+        var what_side = parseInt(prompt("Какая сторона 1 - основание, 2 - боковая "));
+        if (what_side == 1) {
+            var perimiter = parseInt(prompt("Введите периметер треугольника "));
+            var bok_side = parseInt(prompt("Введите боковую сторону "));
+            if (bok_side != 0 && perimiter != 0 && bok_side > 0 && perimiter > 0) {
+                console.log(rb_side(perimiter, bok_side) + "x основание. Х - единица измерения. Из периметра вычетаем две боковые стороны и получаем основание");
+            } else {
+                var side_4 = parseInt(prompt("Ошибка! Сторона не может быть равна 0. Введите 1 что бы начать сначала."));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+            }
+        }
+        if (what_side == 2) {
+            var perimiter = parseInt(prompt("Введите периметер треугольника "));
+            var osnov_side = parseInt(prompt("Введите основание треугольника "));
+            if (osnov_side != 0 && perimiter != 0 && osnov_side > 0 && perimiter > 0) {
+                var side_4 = parseInt(prompt(rb_bok(perimiter, osnov_side) + "x боковая сторона . Х - единица измерения. Из периметра вычетаем основание и делим результат на 2. Получаем боковую сторону. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else {
+                var side_4 = parseInt(prompt("Ошибка! Сторона не может быть равна 0. Введите 1 что бы начать сначала."));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+            }
+        }
+    }
+    if (triangle == 2) {
+        var prym_side = parseInt(prompt("Какая сторона 1 - катет, 2 - гипотинуза "));
+        if (prym_side == 1) {
+            var corner_30 = parseInt(prompt("Есть ли в треугольнике угол в 30 градусов ? Если да то впишите 1, усли нет впишите 0."));
+            if (corner_30 == 1) {
+                var naprotiv_30 = parseInt(prompt("Ваш искомый катет находится напротив угла в 30 градусов? Если да то впишите 1, если нет впишите 0."));
+                if (naprotiv_30 == 1) {
+                    var gipotinuza = parseInt(prompt("Введите размер гипотинузы "));
+                    if (gipotinuza != 0 && gipotinuza > 0) {
+                        var side_4 = parseInt(prompt(katet_30(gipotinuza) + "x равен катет лежащий напротив угла в 30 градусов. Х - едица измерения. Т.к. катет лежит напротив угла в 30 градусов, следовательно по свойству пряиоугольных треугольников катет будет равен половине гипотинузы. Введите 1 что бы начать сначала."));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+                    } else {
+                        var side_4 = parseInt(prompt("Ошибка! Гипотинуза не может быть равна 0. Введите 1 что бы начать сначала."));
+                        if (side_3 == 1) {
+                            console.log(".");
+                        } else if (side_3 == 0) {
+                            console.log(".");
+                        } else {
+                            console.log(".");
+                        }
+                    }
+                } else {
+                    var what_perimetr = parseInt(prompt("Вам известен периметр ? Есди да впишите 1, усли нет впишите 0 "));
+                    if (what_perimetr == 1) {
+                        var perimetr_what = parseInt(prompt("Введите периметр "));
+                        var gip_or_katet = parseInt(prompt("Если вам известна гипотинуза введите 1, если вам известен катет лежащий напротив угла в 30 градусов введите 0 "));
+                    } else {
+                        var gipotinuza2 = parseInt(prompt("Введите гипотинузу "));
+                    }
+                    var katet_0 = parseInt(prompt("Введите известный катет "));
+                    var side_4 = parseInt(prompt(teorema_pifagora(gipotinuza2, katet_0) + "х равен катет. Х - единица измерения. По теореме Пифогора где квадрат катета равен разности квадратов гипотинузы и катета. Корень квадрата будет равен ответу. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                }
+            } else {
+                var gipotinuza2 = parseInt(prompt("Введите гипотинузу "));
+                var katet_0 = parseInt(prompt("Введите известный катет "));
+                var side_4 = parseInt(prompt(teorema_pifagora(gipotinuza2, katet_0) + "х равен катет. Х - единица измерения. По теореме Пифогора где квадрат катета равен разности квадратов гипотинузы и катета. Корень квадрата будет равен ответу. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        } else if (prym_side == 2) {
+            var corner_30 = parseInt(prompt("Есть ли в треугольнике угол в 30 градусов ? Если да то впишите 1, усли нет впишите 0."));
+            if (corner_30 == 1) {
+                var katet_naprotiv = parseInt(prompt("Известен ли вам катет лежащий напротив угла в 30 градусов. Если да, то впишите размер катета, если нет то впишите 0."));
+                if (katet_naprotiv != 0 && katet_naprotiv > 0) {
+                    var side_4 = parseInt(prompt(giponinuza_30_katet(katet_naprotiv) + "х длинна гипотинузы. Х - едица измерения. По свойству прямоугольных треугольников, где катет лежащий напротив угла в 30 градусов равен половине гипотинузы. Из этого найдём гипотинузу умножив длинну катета на 2. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                } else if (katet_naprotiv < 0) {
+                    var side_4 = parseInt(prompt("Ошибка! Отрицательное число не подходит условию программе. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                }
+            } else if (corner_30 == 0) {
+                var perimeter_30 = parseInt(prompt("Известен ли вам периметр треугольника. Если да то впишите длинну периметра , усли нет впишите 0. "));
+                if (perimeter_30 != 0 && perimeter_30 > 0) {
+                    var katet_izv1 = parseInt(prompt("Введите первый известный катет "));
+                    var katet_izv2 = parseInt(prompt("Введите второй известный катет "));
+                    var side_4 = parseInt(prompt(katet_2(perimeter_30, katet_izv1, katet_izv2) + "х гипотинуза. Х - едица измерения. Из периметра вычетвем 2 катета и получаем гипотинузу. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                } else if (perimeter_30 == 0) {
+                    var katet_izv1 = parseInt(prompt("Введите первый известный катет "));
+                    var katet_izv2 = parseInt(prompt("Введите второй известный катет "));
+                    var side_4 = parseInt(prompt(square_gipotinuza(katet_izv1, katet_izv2) + "х гипотинуза. Х - единица измерения. По теореме Пифагора где сумма квадратов катетов равна квадрату гипотинузы найдём её квадрат. И наш ответ будет равнятся корню квадрата гипотинузы. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                } else {
+                    var side_4 = parseInt(prompt("Ошибка! Периметр не может быть отрицательным. Введите 1 что бы начать сначала."));
+                    if (side_3 == 1) {
+                        console.log(".");
+                    } else if (side_3 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                }
+            } else {
+                var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        } else {
+            var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+            if (side_3 == 1) {
+                console.log(".");
+            } else if (side_3 == 0) {
+                console.log(".");
+            } else {
+                console.log(".");
+            }
+        }
+    }
+    if (triangle == 3) {
+        var rav_storon = parseInt(prompt("Введите сторону "));
+        var side_4 = parseInt(prompt("Все стороны будут равны " + rav_storon + "х. Х - единица измерения. По свойству равносторонних треугольников, где все стороны будут равны между собой. Введите 1 что бы начать сначала."));
+        if (side_3 == 1) {
+            console.log(".");
+        } else if (side_3 == 0) {
+            console.log(".");
+        } else {
+            console.log(".");
+        }
+    } else if (triangle != 1 && triangle != 2 && triangle != 3) {
+        var side_4 = parseInt(prompt("Ошибка! Введите число удоволетворяещее условие. Введите 1 что бы начать сначала."));
+        if (side_3 == 1) {
+            console.log(".");
+        } else if (side_3 == 0) {
+            console.log(".");
+        } else {
+            console.log(".");
+        }
+    }
+}
+if (task == 3) {
+    var triangle = parseInt(prompt("Какой треугольник 1 - равнобедренный, 2 - прямоугольный, 3 - равносторонний: "));
+    if (triangle == 1) {
+        var equal_side = parseInt(prompt("Какие стороны в вашем треугольнике равны? Если это основание, то введите 1, если боковая сторона, то ввидите 0. "));
+        if (equal_side == 1) {
+            var equal_corner = parseInt(prompt("Равны ли углы при основание в двух треугольниках? Если да то впишите 1, иначе введите 0. "));
+            if (equal_corner == 1) {
+                var side_4 = parseInt(prompt("Треугольники будут равны по 2 признаку равенства треугольников, по одной стороне и двум прилежащим к ней углам. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else {
+                var side_4 = parseInt(prompt("Программа не смогла решить ваше задание. Попробуйте снова! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        } else {
+            var osnov_corner = parseInt(prompt("Равен ли угол между двумя боковыми стороами. Если да то впишите 1, иначе впишите 0. "));
+            if (osnov_corner == 1) {
+                var side_4 = parseInt(prompt("Треугольники равны по 1 признаку. Т.к. две стороны и угол между ними равны. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else {
+                var side_4 = parseInt(prompt("Программа не смогла решить ваше задание. Попробуйте снова! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        }
+    }
+    if (triangle == 2) {
+        var two_katet = parseInt(prompt("Равны ли в треугольниках два катета. Если да, то впишите 1, если нет, то впишите 0. "));
+        if (two_katet == 1) {
+            var side_4 = parseInt(prompt("Два треугольника равны по 1 признаку равенства прямоугольных треугольников, т.к. у них равны 2 катета. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+        } else if (two_katet == 0) {
+            var katet_ostr_corner = parseInt(prompt("Равны ли в ваших треугольниках один катет и острый угол. Если да то введите 1, если нет то введите 0. "));
+            if (katet_ostr_corner == 1) {
+                var side_4 = parseInt(prompt("Треугольники будут равны по 2 признаку равенства прямоугольных треугольников, т.к. у них равны катет и острый угол. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else if (katet_ostr_corner == 0) {
+                var gipotinuza_katet = parseInt(prompt("Равны ли в ваших треугольниках гипотинза и катет. Если да то впишите 1, если нет то впишите 0. "));
+                if (gipotinuza_katet == 1) {
+                    var side_4 = parseInt(prompt("Треугольники будут равны по 3 признаку равенства прямоугольных треугольников, т.к. у них равны гипотинуза и катет. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                } else if (gipotinuza_katet == 0) {
+                    var gipotinuza_ostr = parseInt(prompt("Равны ли в ваших треугольниках гипотинуза и острый угол? Если да то введите 1, если нет то введите 0. "));
+                    if (gipotinuza_ostr == 1) {
+                        var side_4 = parseInt(prompt("Треугольники равны по 4 признаку равенства прямоугольных треугольников, т.к. у них равны гипотинуза и острый угол. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                    } else if (gipotinuza_ostr == 0) {
+                        var side_4 = parseInt(prompt("Программа не смогла решить ваше задание. Попробуйте снова! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                    } else {
+                        var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                    }
+                } else {
+                    var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                }
+            } else {
+                var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            }
+        } else {
+            var side_4 = parseInt(prompt("Ошибка! Введите коректный ответ! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+        }
+    }
+    if (triangle == 3) {
+        var side = parseInt(prompt("Равны ли в ваших треугольниках 2 одинаковые стороны? Если да, то впишите 1, если нет впишите 0. "));
+        if (side == 1) {
+            var side_4 = parseInt(prompt("Ваши треугольники равны по 1 признаку равенства треугольников, т.к. у вас равны 2 стороны и угол между ними, по свойству равносторонних треугольников. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+        } else if (side == 0) {
+            var side_2 = parseInt(prompt("Равны ли в вашем треугольнике одна сторона? Если да, то введите 1, если нет введите 0. "));
+            if (side_2 == 1) {
+                var side_4 = parseInt(prompt("Ваши треугольники равны по 2 признаку равенства треугольников, т.к. у вас равна одна сторона и прилежащие к ней углы по свойству равносторонних треугольников. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+            } else if (side_2 == 0) {
+                var side_3 = parseInt(prompt("Равны ли в ваших треугольниках все три стороны? Если да, то введите 1, если нет, то введите 0. "));
+                if (side_3 == 1) {
+                    var side_4 = parseInt(prompt("Ваши треугольники равны по 3 признаку равенства треугольников, т.к. у них равны все стороны. Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                } else if (side_3 == 1) {
+                    var side_4 = parseInt(prompt("Программа не смогла решить ваше задание. Попробуйте снова! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+                } else {
+                    console.log(".")
+                }
+            } else {
+                console.log(".")
+            }
+        } else {
+            console.log(".")
+        }
+    } else {
+        console.log(".")
+    }
+} else {
+    console.log(".")
+            }
+</script>
+
+    <div class="menuToggle"></div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg:#333;">
+               <a href="#">
+                <div class="icon"><ion-icon name="accessibility-outline"></ion-icon></div>
+                <div class="text">Genius Geometric</div>
+               </a>
+            </li>
+            <div class="Menulist">
+                <li style="--bg:#f44336;" >
+                            <a href="projectSite.html">
+                                <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                                <div class="text">Home</div>
+                            </a>
+                        </li>
+                <li style="--bg:#ffa117;">
+                    <a href="profile.html">
+                        <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                        <div class="text">Profile</div>
+                    </a>
+                </li>
+                <li style="--bg:#0fc70f;" class="active">
+                    <a href="help.html">
+                        <div class="icon"><ion-icon name="apps-outline"></ion-icon></div>
+                        <div class="text">help</div>
+                    </a>
+                </li>
+                <li style="--bg:#2196f3;">
+                    <a href="explanation.html">
+                        <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                        <div class="text">explanation</div>
+                    </a>
+                </li>
+                <li style="--bg:#b145e9;">
+                    <a href="shop.html">
+                        <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
+                        <div class="text">shop</div>
+                    </a>
+                </li>
+                <li style="--bg:#e91e63;" >
+                    <a href="settings.html">
+                        <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                        <div class="text">Settings</div>
+                        
+    
+                    </a>
+                </li>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="bottom">
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon">
+                           <div class="imgBx">
+                               <img style="width: 60px;" src="https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-31.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="text">Your Name</div>
+                    </a>
+                </li>
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js ">
+    <script nomodule  >https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"</script>
+    
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let sidebar = document.querySelector('.sidebar')
+        menuToggle.onclick = function (){
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+    
+        let Menulist = document.querySelectorAll('.Menulist ');
+        function activeLink(){
+            Menulist.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        Menulist.forEach((item)=>
+        item.addEventListener('click',activeLink));
+    </script>    
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

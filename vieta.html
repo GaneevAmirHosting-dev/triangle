@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="shortcut icon" href="base.png">
+    <link rel="stylesheet" type="text/css" href="cursorchik.css">
+    <link rel="stylesheet" type="text/css" href="sidebarMenu.css">
+</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>vieta</title>
+</head>
+<body>
+    
+    <div id="cursor"></div>
+    <script>
+        let cursor = document.querySelector('#cursor');
+        let body = document.querySelector('body');
+        document.addEventListener('mousemove', (e) => {
+            
+            cursor.style.top = e.pageY + 'px';
+            cursor.style.left = e.pageX + 'px';
+
+        })
+    </script>
+
+
+
+
+<script>
+    var a = parseInt(prompt("Введите а "));
+    var b = parseInt(prompt("Введите b "));
+    var c = parseInt(prompt("Введите с "));
+    var D = b**2 - (4*a*c);
+    var x_1 = (-b + Math.sqrt(D)) / (2*a);
+    var x_3 = ( -Math.sqrt(D) - b) / (2*a);
+    if (D > 0) {
+        var side_4 = parseInt(prompt("Первый корень. Введите 0 что бы просмотреть второй корень, введите 1 что бы начать сначала",x_1));
+                if (side_4 == 0) {
+                        var side_4 = parseInt(prompt("Bторой корень корень. Введите 1 что бы начать сначала.",x_3));
+                    if (side_4 == 1) {
+                        console.log(".");
+                    } else if (side_4 == 0) {
+                        console.log(".");
+                    } else {
+                        console.log(".");
+                    }
+                } else if (side_4 == 1) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }     
+    } else if (D === 0) {
+        var x = -1 * (b / (2*a));
+        var side_4 = parseInt(prompt("Один корень т.к дискриминант равен 0. Корень равен", x ,"Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+    } else {
+        var side_4 = parseInt(prompt("Нет действительных корней! Введите 1 что бы начать сначала."));
+                if (side_3 == 1) {
+                    console.log(".");
+                } else if (side_3 == 0) {
+                    console.log(".");
+                } else {
+                    console.log(".");
+                }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="menuToggle"></div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg:#333;">
+               <a href="#">
+                <div class="icon"><ion-icon name="accessibility-outline"></ion-icon></div>
+                <div class="text">Genius Geometric</div>
+               </a>
+            </li>
+            <div class="Menulist">
+                <li style="--bg:#f44336;" >
+                            <a href="projectSite.html">
+                                <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                                <div class="text">Home</div>
+                            </a>
+                        </li>
+                <li style="--bg:#ffa117;">
+                    <a href="profile.html">
+                        <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                        <div class="text">Profile</div>
+                    </a>
+                </li>
+                <li style="--bg:#0fc70f;" class="active">
+                    <a href="help.html">
+                        <div class="icon"><ion-icon name="apps-outline"></ion-icon></div>
+                        <div class="text">help</div>
+                    </a>
+                </li>
+                <li style="--bg:#2196f3;">
+                    <a href="explanation.html">
+                        <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                        <div class="text">explanation</div>
+                    </a>
+                </li>
+                <li style="--bg:#b145e9;">
+                    <a href="shop.html">
+                        <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
+                        <div class="text">shop</div>
+                    </a>
+                </li>
+                <li style="--bg:#e91e63;" >
+                    <a href="settings.html">
+                        <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                        <div class="text">Settings</div>
+                        
+    
+                    </a>
+                </li>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="bottom">
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon">
+                           <div class="imgBx">
+                               <img style="width: 60px;" src="https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-31.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="text">Your Name</div>
+                    </a>
+                </li>
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js ">
+    <script nomodule  >https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"</script>
+    
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let sidebar = document.querySelector('.sidebar')
+        menuToggle.onclick = function (){
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+    
+        let Menulist = document.querySelectorAll('.Menulist ');
+        function activeLink(){
+            Menulist.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        Menulist.forEach((item)=>
+        item.addEventListener('click',activeLink));
+    </script>    
+    
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

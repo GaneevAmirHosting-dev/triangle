@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+    <link rel="shortcut icon" href="base.png">
+    <link rel="stylesheet" type="text/css" href="cursorchik.css">
+    <link rel="stylesheet" type="text/css" href="sidebarMenu.css">
+    <link rel="stylesheet" href="https://libs.cdnjs.net/font-awesome/6.4.2/css/all.css">
+</head>
+<body>
+    
+        <div id="cursor"></div>
+        <script>
+            let cursor = document.querySelector('#cursor');
+            let body = document.querySelector('body');
+            document.addEventListener('mousemove', (e) => {
+                
+                cursor.style.top = e.pageY + 'px';
+                cursor.style.left = e.pageX + 'px';
+    
+            })
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+   <div class="menuToggle"></div>
+    <div class="sidebar">
+        <ul>
+            <li class="logo" style="--bg:#333;">
+               <a href="#">
+                <div class="icon"><ion-icon name="accessibility-outline"></ion-icon></div>
+                <div class="text">Genius Geometric</div>
+               </a>
+            </li>
+            <div class="Menulist">
+                <li style="--bg:#f44336;" >
+                    <a href="projectSite.html">
+                        <div class="icon"><ion-icon name="home-outline"></ion-icon></div>
+                        <div class="text">Home</div>
+                    </a>
+                </li>
+                <li style="--bg:#ffa117;">
+                    <a href="profile.html">
+                        <div class="icon"><ion-icon name="person-circle-outline"></ion-icon></div>
+                        <div class="text">Profile</div>
+                    </a>
+                </li>
+                <li style="--bg:#0fc70f;">
+                    <a href="help.html">
+                        <div class="icon"><ion-icon name="apps-outline"></ion-icon></div>
+                        <div class="text">help</div>
+                    </a>
+                </li>
+                <li style="--bg:#2196f3;">
+                    <a href="explanation.html">
+                        <div class="icon"><ion-icon name="information-circle-outline"></ion-icon></div>
+                        <div class="text">explanation</div>
+                    </a>
+                </li>
+                <li style="--bg:#b145e9;" class="active">
+                    <a href="shop.html">
+                        <div class="icon"><ion-icon name="cart-outline"></ion-icon></div>
+                        <div class="text">shop</div>
+                    </a>
+                </li>
+                <li style="--bg:#e91e63;">
+                    <a href="settings.html">
+                        <div class="icon"><ion-icon name="settings-outline"></ion-icon></div>
+                        <div class="text">Settings</div>
+                    </a>
+                </li>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="bottom">
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon">
+                           <div class="imgBx">
+                               <img style="width: 60px;" src="https://proprikol.ru/wp-content/uploads/2020/11/kartinki-oshibki-31.jpg" alt="">
+                           </div>
+                        </div>
+                        <div class="text">Your Name</div>
+                    </a>
+                </li>
+                <li style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon"><ion-icon name="log-out-outline"></ion-icon></div>
+                        <div class="text">Logout</div>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js ">
+    <script nomodule  >https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"</script>
+
+    <script>
+        let menuToggle = document.querySelector('.menuToggle');
+        let sidebar = document.querySelector('.sidebar')
+        menuToggle.onclick = function (){
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        let Menulist = document.querySelectorAll('.Menulist li');
+        function activeLink(){
+            Menulist.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+        Menulist.forEach((item)=>
+        item.addEventListener('click',activeLink));
+    </script>    
+
+</body>
+</html>

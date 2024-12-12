@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">portfolio</a>
+        <a href="#">team</a>
+        <a href="#">contact</a>
+ <div id="marker"></div>
+    </nav>
+<script>
+    let marker = document.querySelector('#marker');
+    let item = document.querySelectorAll('nav a');
+
+    function endicator(e) {
+        marker.style.left = e.offsetLeft+'px';
+        marker.style.width = e.offsetWidth+'px';
+    }
+
+
+    item.forEach(link => {
+        link.addEventListener('click', (e) => {
+            endicator(e.target);
+        })
+        
+    })
+
+        
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
